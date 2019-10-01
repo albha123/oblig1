@@ -46,8 +46,9 @@
             width:25px;
             height:3px;
             background-color:black;
-            margin:3px;
+            margin:2px;
             display:none;
+            cursor:pointer;
             
         }
         @media screen and (max-width:768px) {
@@ -64,7 +65,8 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    transform: translateX(100%)
+                    transform: translateX(100%);
+                    transition:transform 0.5s ease-in;
             }
 
             .nav-links li{
@@ -82,6 +84,19 @@
                 display: flex;
                 justify-content: space-around;
                 width: 60%;
+            }
+        }
+        .nav-active{
+            transform:translateX(0);
+        }
+        @keyframes navLinkFade{
+            from{
+                opacity:0;
+                transform:translateX(50px)
+            }
+            to{
+                opacity:1;
+                transform:translateX(0px);
             }
         }
         
@@ -114,5 +129,24 @@
             <div class="l3"></div>
         </div>
     </nav>
+    <script>
+        const navSlide = () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-link li');
+
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+
+            });
+            navLinks.forEach((link, index) => {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+
+            });
+
+            
+        }
+        navSlide();
+    </script>
 </body>
 </html>
