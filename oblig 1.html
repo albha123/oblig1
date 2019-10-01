@@ -46,7 +46,7 @@
             width:25px;
             height:3px;
             background-color:black;
-            margin:2px;
+            margin:5px;
             display:none;
             cursor:pointer;
             
@@ -99,6 +99,16 @@
                 transform:translateX(0px);
             }
         }
+        .toggle .l1{
+            transform:rotate(-45deg) translate(-6px,5px)
+        }
+        .toggle .l2{
+            opacity:0;
+        }
+        .toggle .l3{
+            transform:rotate(45deg) translate(-6px,-5px);
+        }
+
         
         
 
@@ -146,8 +156,8 @@
                 }
 
             });
-
-            });       
+            burger.classList.toggle('toggle');
+        });       
         }
         navSlide();
     </script>
