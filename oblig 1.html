@@ -127,10 +127,10 @@
                 <a href="https://albha123.github.io/oblig1/oblig%201.html">Home</a>
             </li>
             <li style="cursor:pointer;">
-                <a href="#"></a>About
+                <a href="#" onclick="aboutPage()">About</a>
             </li>
             <li style="cursor:pointer;">
-                <a href="#"></a>Work
+                <a href="#">Work</a>
             </li>
             <li style="cursor:pointer;">
                 <a href="https://albha123.github.io/oblig12/project.html">Projects</a>
@@ -142,7 +142,9 @@
             <div class="l3"></div>
         </div>
     </nav>
+    <div id="info"></div>
     <script>
+        var infoDiv = document.getElementById('info');
         const navSlide = () => {
             const burger = document.querySelector('.burger');
             const nav = document.querySelector('.nav-links');
@@ -161,6 +163,9 @@
             });
             burger.classList.toggle('toggle');
         });       
+        }
+        function aboutPage() {
+            
         }
         navSlide();
     </script>
